@@ -20,6 +20,12 @@ project(lokinet-win32
   DESCRIPTION "lokinet win32 platform bits - MSVC is an abomination"
   LANGUAGES ${LANGS})
 
+include(CheckCXXSourceCompiles)
+include(CheckLibraryExists)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
 add_library(lokinet_win32
   STATIC
   src/lokinet_wfp.cpp)
