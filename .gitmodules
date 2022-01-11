@@ -1,0 +1,6 @@
+[submodule "libwfp"]
+	path = libwfp
+	url = https://github.com/mullvad/libwfp
+[submodule "windows-libraries"]
+	path = windows-libraries
+	url = https://github.com/mullvad/windows-libraries
