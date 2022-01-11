@@ -98,15 +98,27 @@ set(common_root
 
 list(TRANSFORM common_files PREPEND ${common_root})
 
+add_library(mullvad_common
+  STATIC
+  ${common_files})
+
 add_library(mullvad_wfp
   STATIC
-  ${common_files}
   ${wfp_files})
+
+target_include_directories(mullvad_common
+  PUBLIC
+  ${common_root}/libcommon
+  ${common_root})
 
 target_include_directories(mullvad_wfp
   PUBLIC
-  ${wfp_root}
-  ${common_root})
+  ${wfp_root}/libwfp
+  ${wfp_root})
+
+target_link_libraries(mullvad_wfp
+  PUBLIC
+  mullvad_common)
 
 target_link_libraries(lokinet_win32
   PRIVATE
