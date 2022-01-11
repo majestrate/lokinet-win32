@@ -118,6 +118,10 @@ target_link_libraries(mullvad_wfp
   PUBLIC
   mullvad_common)
 
+target_link_libraries(mullvad_common
+  PUBLIC
+  ntdll)
+
 target_link_libraries(lokinet_win32
   PRIVATE
   mullvad_wfp)
